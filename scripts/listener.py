@@ -37,24 +37,47 @@
 ## to the 'chatter' topic
 
 import rospy
-from std_msgs.msg import String
+from std_msgs.msg import Int32
+
+import ADS1115
+import PCA9685
+
+
+PWM_DUTY = 1
+PWM_FREQ = 100
+
+ads1115_0 = ADS1115.ADS1115_0()
+pca9865 = PCA9685.PCA9865()
+
+left_channel = 0
+right_channel = 1
+
+pca9865.reset_PWM()
+pca9865.set_freq(PWM_FREQ)
+pca9865.set_PWM(left_channel,0)
+pca9865.set_PWM(right_channel,0)
+#pca9865.set_duty(PWM_DUTY) Esto no esta implementado
+ads1115_0.set_channel(0)
+ads1115_0.config_single_ended()
+adc_value = ads1115_0.read_adc()
+adc_prev = adc_value
 
 def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
+    rospy.loginfo(rospy.get_caller_id() + 'I heard %d', data.data)
 
-def listener():
+def direction_listener():
 
     # In ROS, nodes are uniquely named. If two nodes with the same
     # name are launched, the previous one is kicked off. The
     # anonymous=True flag means that rospy will choose a unique
     # name for our 'listener' node so that multiple listeners can
     # run simultaneously.
-    rospy.init_node('listener', anonymous=True)
+    rospy.init_node('direction_listener', anonymous=True)
 
-    rospy.Subscriber('chatter', String, callback)
+    rospy.Subscriber('direction', Int32, callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 
 if __name__ == '__main__':
-    listener()
+    direction_listener()

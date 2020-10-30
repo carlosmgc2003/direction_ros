@@ -120,11 +120,9 @@ class ADS1115_0():
  #               print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2) )
                 bus_0.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
                 bus_0.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+
 
         def config_differential(self):
             # Select the Configuration Register
@@ -152,11 +150,11 @@ class ADS1115_0():
 #                print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2))
                 bus_0.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Success: registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Success: registro de configuracin escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_0.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def read_adc(self):
                 # Read data back from ADS1115_REG_POINTER_CONVERT(0x00),
@@ -205,11 +203,11 @@ class ADS1115_1():
  #               print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2) )
                 bus_1.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Registro de configuracin escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_1.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def config_differential(self):
             # Select the Configuration Register
@@ -237,11 +235,11 @@ class ADS1115_1():
 #                print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2))
                 bus_1.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Success: registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Success: registro de configuracin escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_1.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def read_adc(self):
                 # Read data back from ADS1115_REG_POINTER_CONVERT(0x00),
@@ -290,11 +288,11 @@ class ADS1115_2():
  #               print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2) )
                 bus_2.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Registro de configuracion escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_2.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def config_differential(self):
             # Select the Configuration Register
@@ -322,11 +320,11 @@ class ADS1115_2():
 #                print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2))
                 bus_2.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Success: registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Success: registro de configuracin escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_2.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def read_adc(self):
                 # Read data back from ADS1115_REG_POINTER_CONVERT(0x00),
@@ -375,11 +373,11 @@ class ADS1115_3():
  #               print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2) )
                 bus_3.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Registro de configuracin escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_3.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def config_differential(self):
             # Select the Configuration Register
@@ -407,11 +405,11 @@ class ADS1115_3():
 #                print ("Escribiendo en registro 1: \n", "Registro 0: ", int(config_reg_1), "\n", "Registro 1: ", int(config_reg_2))
                 bus_3.write(bytes([int(1),int(config_reg_1), int(config_reg_2)]))
                 sleep(0.1)
-#                print ("Success: registro de configuración escrito")
-#                print ("Cambiando el puntero al registro de medición")
+#                print ("Success: registro de configuracin escrito")
+#                print ("Cambiando el puntero al registro de medicin")
                 bus_3.write(bytes([int(0)]))
                 sleep(0.1)
-#                print ("Success: puntero cambiado al registro de medición")
+#                print ("Success: puntero cambiado al registro de medicin")
 
         def read_adc(self):
                 # Read data back from ADS1115_REG_POINTER_CONVERT(0x00),
