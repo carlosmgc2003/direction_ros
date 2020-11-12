@@ -2,12 +2,11 @@
 
 import rospy
 from std_msgs.msg import Int32
-import time
 import ADS1115
 import PCA9685
 import Jetson.GPIO as gpio
 
-PWM_DUTY = 35 #7 valor minimo bueno vacio
+PWM_DUTY = 35 #7 valor minimo bueno vacio 35 valor maximo vacio
 PWM_FREQ = 6000 #Frecuencia buena
 LEFT_END = 29
 RIGHT_END = 33
@@ -48,15 +47,12 @@ def callback(data):
         pca9865.set_PWM(left_channel,0)
         # Pulso de giro
         pca9865.set_PWM(left_channel,PWM_DUTY)
-        #time.sleep(PULSE_W)
     elif data.data == -1 and not gpio.input(RIGHT_END):
         # Blanquear el PWM
         pca9865.set_PWM(right_channel,0)
         pca9865.set_PWM(right_channel,0)
         # Pulso de giro
         pca9865.set_PWM(right_channel,PWM_DUTY)
-        #time.sleep(PULSE_W)
-
 
     if gpio.input(RIGHT_END):
         rospy.loginfo("No puedo girar mas a la Izquierda!")

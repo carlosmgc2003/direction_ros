@@ -7,9 +7,9 @@ import i2cdev
 
 import numpy as np
 
-from ADS1115 import ADS1115
+from ADS1115 import ADS1115_0
 from PCA9685 import PCA9865
-÷from std_msgs.msg import Int32, Float64
+from std_msgs.msg import Int32, Float64
 
 PUBLISHER_NAME = "direction"
 
