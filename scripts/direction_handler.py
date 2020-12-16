@@ -35,12 +35,12 @@ def callbackDirection(data):
         pca9865.set_PWM(left_channel,0)
         # Blanquear de nuevo el PWM
         pca9865.set_PWM(right_channel,0)
-    elif data.data == 1 and not left_eor == True:
+    elif data.data == 1 and not right_eor == True:
         # Blanquear el PWM
         pca9865.set_PWM(left_channel,0)
         # Pulso de giro
         pca9865.set_PWM(left_channel,PWM_DUTY)
-    elif data.data == -1 ando not right_eor == True:
+    elif data.data == -1 and not left_eor == True:
         # Blanquear el PWM
         pca9865.set_PWM(right_channel,0)
         # Pulso de giro
@@ -63,8 +63,8 @@ def callbackRightEor(data):
 def direction_listener():
     rospy.init_node('direction_listener', anonymous=True)
     rospy.Subscriber('direction', Int32, callbackDirection)
-    rospy.Subscriber('left_eor', Int32, callbackLeftEor)
-    rospy.Subscriber('right_eor', Int32, callbackRightEor)
+    rospy.Subscriber('eor_izquierdo', Int32, callbackLeftEor)
+    rospy.Subscriber('eor_derecho', Int32, callbackRightEor)
     rospy.spin()
 
 if __name__ == '__main__':
