@@ -17,7 +17,7 @@ pca9865 = PCA9685.PCA9865()
 left_channel = 1
 right_channel = 0
 
-pca9865.reset_PWM()
+#pca9865.reset_PWM()
 pca9865.set_freq(PWM_FREQ)
 pca9865.set_PWM(left_channel,0)
 pca9865.set_PWM(right_channel,0)
